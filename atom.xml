@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://loong-novice.github.io/</id>
+    <title>Gridea</title>
+    <updated>2020-07-14T18:32:26.962Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://loong-novice.github.io/"/>
+    <link rel="self" href="https://loong-novice.github.io/atom.xml"/>
+    <subtitle>温故而知新</subtitle>
+    <logo>https://loong-novice.github.io/images/avatar.png</logo>
+    <icon>https://loong-novice.github.io/favicon.ico</icon>
+    <rights>All rights reserved 2020, Gridea</rights>
+    <entry>
+        <title type="html"><![CDATA[MPLS-A]]></title>
+        <id>https://loong-novice.github.io/post/mpls-a/</id>
+        <link href="https://loong-novice.github.io/post/mpls-a/">
+        </link>
+        <updated>2020-07-14T17:43:51.000Z</updated>
+        <summary type="html"><![CDATA[<h1 id="mpls">MPLS</h1>
+<h2 id="拓扑">拓扑</h2>
+<p><img src="/post-images/1594748672014.png" alt="" loading="lazy">@w=700</p>
+]]></summary>
+        <content type="html"><![CDATA[<h1 id="mpls">MPLS</h1>
+<h2 id="拓扑">拓扑</h2>
+<p><img src="https://loong-novice.github.io//post-images/1594748672014.png" alt="" loading="lazy">@w=700</p>
+<!-- more -->
+<p>拓扑说明：<br>
+R1 R2 R3---- isis AS 10  BGP  AS 10<br>
+R4 R5 R6---- isis AS 20  BGP  AS 20<br>
+R1 R5 为RR<br>
+R2 R6 为PE<br>
+R7 R8 R9 R10 为CE<br>
+RD RT 如图所示</p>
+<!-- more -->
+<h2 id="配置">配置</h2>
+<h2 id="测试">测试</h2>
+<h3 id="ping测试">ping测试</h3>
+<p>R7 loop0 7.7.7.7   访问  R9 loop0 9.9.9.9<br>
+<strong>图一</strong><br>
+<img src="https://loong-novice.github.io//post-images/1594749807335.png" alt="" loading="lazy"><br>
+<strong>图二</strong><br>
+<img src="https://loong-novice.github.io//post-images/1594749836103.png" alt="" loading="lazy"><br>
+<strong>图三</strong><br>
+<img src="https://loong-novice.github.io//post-images/1594749839900.png" alt="" loading="lazy"><br>
+<strong>图四</strong><br>
+<img src="https://loong-novice.github.io//post-images/1594749858275.png" alt="" loading="lazy"><br>
+<strong>图五</strong><br>
+<img src="https://loong-novice.github.io//post-images/1594749866898.png" alt="" loading="lazy"><br>
+<strong>图六</strong><br>
+<img src="https://loong-novice.github.io//post-images/1594749872612.png" alt="" loading="lazy"><br>
+<strong>图七</strong><br>
+<img src="https://loong-novice.github.io//post-images/1594749882437.png" alt="" loading="lazy"><br>
+<strong>图八</strong><br>
+<img src="https://loong-novice.github.io//post-images/1594749888681.png" alt="" loading="lazy"><br>
+<strong>图九</strong><br>
+<img src="https://loong-novice.github.io//post-images/1594749898693.png" alt="" loading="lazy"><br>
+<strong>图十</strong><br>
+<img src="https://loong-novice.github.io//post-images/1594749963089.png" alt="" loading="lazy"><br>
+<strong>图十一</strong><br>
+<img src="https://loong-novice.github.io//post-images/1594749972119.png" alt="" loading="lazy"><br>
+<strong>图十二</strong><br>
+<img src="https://loong-novice.github.io//post-images/1594749981700.png" alt="" loading="lazy"><br>
+<strong>图十三</strong><br>
+<img src="https://loong-novice.github.io//post-images/1594749986666.png" alt="" loading="lazy"><br>
+<strong>图十四</strong><br>
+<img src="https://loong-novice.github.io//post-images/1594749995724.png" alt="" loading="lazy"><br>
+<strong>图十五</strong><br>
+<img src="https://loong-novice.github.io//post-images/1594750000753.png" alt="" loading="lazy"></p>
+<hr>
+<hr>
+<h4 id="数据分析-路由查找">数据分析 路由查找</h4>
+<ol>
+<li>
+<p>由上图可以看出，去往9.9.9.9的数据包 发往刚 R2 通过R7的G0/0/2口</p>
+</li>
+<li>
+<p>在R2上查找（图3 图4），发现去9.9.9.9 先打上一个内层标签（私网标签）1049 然后再打上公网 1025 如图五抓包</p>
+</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>1025</th>
+<th>1049</th>
+<th>src 7.7.7.7</th>
+<th>des 9.9.9.9</th>
+</tr>
+</thead>
+<tbody></tbody>
+</table>
+<ol start="3">
+<li>通过R2 g0/0/0 到达R1  如 图六  在图六中看到 R1 上没有vpn实例 端口没有绑定vpn 没有9.9.9.9 路由信息 只有公网路由（特指的是 1.1.1.1 到 6.6.6.6 loop0 ）信息 外层标签是mpls 分配 看标签是3 次末跳弹出 因此 在R1 出口 只有一层标签 1025 弹出</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>1049</th>
+<th>src 7.7.7.7</th>
+<th>des 9.9.9.9</th>
+</tr>
+</thead>
+<tbody></tbody>
+</table>
+<ol start="4">
+<li>
+<p>到达R3 图八 显示到达9.9.9.9 路由 脱标签 变成ipv4 路由传递 out--&gt;null  图九显示数据包围为ip包</p>
+</li>
+<li>
+<p>到达R4 查找 9.9.9.9 路由 如图十所示 先私网标签1027 然后在打上公网标签1031 （6.6.6.6） 数据包 图十一</p>
+</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>1031</th>
+<th>1027</th>
+<th>7.7.7.7</th>
+<th>9.9.9.9</th>
+</tr>
+</thead>
+<tbody></tbody>
+</table>
+<ol start="6">
+<li>到达R5 查找6.6.6.6 弹出标签 1031 弹出  图十四   数据包图十二</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>1027</th>
+<th>7.7.7.7</th>
+<th>9.9.9.9</th>
+</tr>
+</thead>
+<tbody></tbody>
+</table>
+<ol start="7">
+<li>到达R6 弹出私网标签 1027 图十五  数据包图十三</li>
+</ol>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[MPLS]]></title>
+        <id>https://loong-novice.github.io/post/mpls/</id>
+        <link href="https://loong-novice.github.io/post/mpls/">
+        </link>
+        <updated>2020-07-13T11:58:50.000Z</updated>
+        <content type="html"><![CDATA[<p>baidu<br>
+<em>baidu</em>   <strong>baidu</strong>   <u>baidu</u>   <s>baidu</s></p>
+<hr>
+<p>baidu</p>
+<hr>
+<blockquote>
+<p>baidu 引用文本</p>
+<blockquote>
+<p>迭代</p>
+<blockquote>
+<p>迭代</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>帐户类型</th>
+<th>免费帐户</th>
+<th>标准帐户</th>
+<th>高级帐户</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>帐户流量</td>
+<td>60M</td>
+<td>1GB</td>
+<td>10GB</td>
+</tr>
+<tr>
+<td>设备数目</td>
+<td>2台</td>
+<td>无限制</td>
+<td>无限制</td>
+</tr>
+<tr>
+<td>当前价格</td>
+<td>免费</td>
+<td>￥8.17/月</td>
+<td>￥12.33/月</td>
+</tr>
+</tbody>
+</table>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Hello Gridea]]></title>
+        <id>https://loong-novice.github.io/post/hello-gridea/</id>
+        <link href="https://loong-novice.github.io/post/hello-gridea/">
+        </link>
+        <updated>2018-12-11T16:00:00.000Z</updated>
+        <summary type="html"><![CDATA[<p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
+✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
+✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
+<!-- more -->
+<p><a href="https://github.com/getgridea/gridea">Github</a><br>
+<a href="https://gridea.dev/">Gridea 主页</a><br>
+<a href="http://fehey.com/">示例网站</a></p>
+<h2 id="特性">特性👇</h2>
+<p>📝  你可以使用最酷的 <strong>Markdown</strong> 语法，进行快速创作</p>
+<p>🌉  你可以给文章配上精美的封面图和在文章任意位置插入图片</p>
+<p>🏷️  你可以对文章进行标签分组</p>
+<p>📋  你可以自定义菜单，甚至可以创建外部链接菜单</p>
+<p>💻  你可以在 <strong>Windows</strong>，<strong>MacOS</strong> 或 <strong>Linux</strong> 设备上使用此客户端</p>
+<p>🌎  你可以使用 <strong>𝖦𝗂𝗍𝗁𝗎𝖻 𝖯𝖺𝗀𝖾𝗌</strong> 或 <strong>Coding Pages</strong> 向世界展示，未来将支持更多平台</p>
+<p>💬  你可以进行简单的配置，接入 <a href="https://github.com/gitalk/gitalk">Gitalk</a> 或 <a href="https://github.com/SukkaW/DisqusJS">DisqusJS</a> 评论系统</p>
+<p>🇬🇧  你可以使用<strong>中文简体</strong>或<strong>英语</strong></p>
+<p>🌁  你可以任意使用应用内默认主题或任意第三方主题，强大的主题自定义能力</p>
+<p>🖥  你可以自定义源文件夹，利用 OneDrive、百度网盘、iCloud、Dropbox 等进行多设备同步</p>
+<p>🌱 当然 <strong>Gridea</strong> 还很年轻，有很多不足，但请相信，它会不停向前 🏃</p>
+<p>未来，它一定会成为你离不开的伙伴</p>
+<p>尽情发挥你的才华吧！</p>
+<p>😘 Enjoy~</p>
+]]></content>
+    </entry>
+</feed>
