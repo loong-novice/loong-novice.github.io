@@ -1,119 +1,180 @@
-<html>
-  <head>
-    <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>MPLS-A | Gridea</title>
-<link rel="shortcut icon" href="https://loong-novice.github.io//favicon.ico?v=1594800159672">
-<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta HTTP-EQUIV="pragma" CONTENT="no-cache"> 
+<meta HTTP-EQUIV="Cache-Control" CONTENT="no-cache, must-revalidate"> 
+<meta HTTP-EQUIV="expires" CONTENT="0"> 
+<title>MPLS-A | 网络</title>	
+
 <link rel="stylesheet" href="https://loong-novice.github.io//styles/main.css">
-<link rel="alternate" type="application/atom+xml" title="MPLS-A | Gridea - Atom Feed" href="https://loong-novice.github.io//atom.xml">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+<script type="text/javascript">
+function getCSS()
+{
+        datetoday = new Date();
+        timenow=datetoday.getTime();
+        datetoday.setTime(timenow);
+        thehour = datetoday.getHours();
+
+            display = "https://loong-novice.github.io//media/css/night.css";
+
+            display = "https://loong-novice.github.io//media/css/night.css";   
+      
+            display = "https://loong-novice.github.io//media/css/day.css";
+
+            display = "https://loong-novice.github.io//media/css/day.css";
+      
+
+var css = '<';
+        css+='link rel="stylesheet" href='+display+' \/';
+        css+='>';
+        document.write(css);
+}
+</script>
+<link href="https://fonts.googleapis.com/css?family=Dancing+Script|Liu+Jian+Mao+Cao&display=swap" rel="stylesheet">
+<link href="https://at.alicdn.com/t/font_1306644_jwtuc2zzbrd.css" rel="stylesheet" />
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<script type='text/javascript' src='https://loong-novice.github.io//media/scripts/script.js'></script>
+<link href="https://cdn.bootcss.com/animate.css/3.5.2/animate.min.css" rel="stylesheet" />
+  <script src="https://cdn.bootcss.com/wow/1.1.2/wow.min.js"></script>
+  <script src="https://cdn.bootcss.com/highlight.js/9.15.8/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <script>wow=new WOW({boxClass:'wow',animateClass:'animated',offset:0,mobile:true,live:true});wow.init();</script>
+
+<script type="text/javascript">
+window.onload=getCSS();
+</script>
 
 
+ 	
+</head>
+<body class="post-template-default single single-post postid-70 single-format-standard">
+    <div id="wrapper">
+        
+			
+		<header id="header" class="site-header" 
+		
+		style="background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),url(https://loong-novice.github.io//post-images/mpls-a.jpg)"
+		
+		>
+			<div class="site-branding">
+									<h1 class="site-title"><a href="https://loong-novice.github.io/" rel="home">网络</a></h1>
+										
+					<h2 class="site-description">龙小白</h2>
+										
+							</div>
+			<nav id="nav-wrapper">
+				<div class="container">
+					<div class="nav-toggle">
+						<div class="bars">
+							<div class="bar"></div>
+							<div class="bar"></div>
+							<div class="bar"></div>
+						</div>
+					</div>
+					<div class="clear"></div>
+					<ul id="" class="dove">
+		 
+     			
+<li>
+	 
+	<a  href="/"> 首页</a></li>
+	
+    
+     			
+<li>
+	 
+	<a  href="/archives"> 归档</a></li>
+	
+    
+     			
+<li>
+	 
+	<a  href="/tags"> 标签</a></li>
+	
+    
+     			
+<li>
+	 
+	<a  href="/post/about"> 关于</a></li>
+	
+    
 
-    <meta name="description" content="MPLS
-拓扑
+</ul>
+</li>		
+		
+</ul>				</div>
+			</nav>
+						<div class="jingge">
 
 
-拓扑说明：
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        </header>
+
+		<div id="content" class="container">
+			<div class="row">
+	<div class="col-md-8 site-main">
+				
+<article id="post-70" class="post-70 post type-post status-publish format-standard hentry category-5 tag-10 tag-9 tag-11">
+
+	
+	                      
+		<div class="entry-content">
+			<h1 class="wow swing entry-title">MPLS-A</h1>
+<div class="entry-meta">
+<div class="wow bounce">
+	<i class="iconfont icon-rili"> <time class="lately-a" datetime="2020-07-15 01:43:51" itemprop="datePublished" pubdate="">2020-07-15</time></i>
+	          </div>
+			
+</span>
+													 
+		</div>
+                  
+			<div class="wow slideInLeft entry-summary song">
+				<h3 id="mpls">MPLS</h3>
+<h4 id="拓扑">拓扑</h4>
+<figure data-type="image" tabindex="1"><img src="https://loong-novice.github.io//post-images/1594748672014.png" alt="" loading="lazy"></figure>
+<pre><code>拓扑说明：
 R1 R2 R3---- isis AS 10  BGP  AS 10
 R4 R5 R6---- isis AS 20  BGP  AS 20
-R1 R5 为RR
+R1 R5 为RR 
 R2 R6 为PE
-R7 R8 R9 R10..." />
-    <meta name="keywords" content="" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
-    <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
-  </head>
-  <body>
-    <div class="main">
-      <div class="main-content">
-        <div class="site-header">
-  <a href="https://loong-novice.github.io/">
-  <img class="avatar" src="https://loong-novice.github.io//images/avatar.png?v=1594800159672" alt="">
-  </a>
-  <h1 class="site-title">
-    Gridea
-  </h1>
-  <p class="site-description">
-    温故而知新
-  </p>
-  <div class="menu-container">
-    
-      
-        <a href="/" class="menu">
-          首页
-        </a>
-      
-    
-      
-        <a href="/archives" class="menu">
-          归档
-        </a>
-      
-    
-      
-        <a href="/tags" class="menu">
-          标签
-        </a>
-      
-    
-      
-        <a href="/post/about" class="menu">
-          关于
-        </a>
-      
-    
-  </div>
-  <div class="social-container">
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-  </div>
-</div>
+R7 R8 R9 R10 为CE
+RD RT 如图所示
 
-        <div class="post-detail">
-          <article class="post">
-            <h2 class="post-title">
-              MPLS-A
-            </h2>
-            <div class="post-info">
-              <span>
-                2020-07-15
-              </span>
-              <span>
-                2 min read
-              </span>
-              
-            </div>
-            
-            <div class="post-content-wrapper">
-              <div class="post-content">
-                <h1 id="mpls">MPLS</h1>
-<h2 id="拓扑">拓扑</h2>
-<figure data-type="image" tabindex="1"><img src="https://loong-novice.github.io//post-images/1594748672014.png" alt="" loading="lazy"></figure>
-<!-- more -->
-<p>拓扑说明：<br>
-R1 R2 R3---- isis AS 10  BGP  AS 10<br>
-R4 R5 R6---- isis AS 20  BGP  AS 20<br>
-R1 R5 为RR<br>
-R2 R6 为PE<br>
-R7 R8 R9 R10 为CE<br>
-RD RT 如图所示</p>
-<!-- more -->
-<h2 id="配置">配置</h2>
-<h2 id="测试">测试</h2>
-<h3 id="ping测试">ping测试</h3>
-<p>R7 loop0 7.7.7.7   访问  R9 loop0 9.9.9.9<br>
-<strong>图一</strong><br>
+</code></pre>
+<h4 id="配置">配置</h4>
+<pre><code>
+</code></pre>
+<h4 id="ping测试">ping测试</h4>
+<hr>
+<p>R7 loop0 7.7.7.7   访问  R9 loop0 9.9.9.9</p>
+<hr>
+<p><strong>图一</strong><br>
 <img src="https://loong-novice.github.io//post-images/1594749807335.png" alt="" loading="lazy"><br>
 <strong>图二</strong><br>
 <img src="https://loong-novice.github.io//post-images/1594749836103.png" alt="" loading="lazy"><br>
@@ -146,14 +207,10 @@ RD RT 如图所示</p>
 <hr>
 <hr>
 <h4 id="数据分析-路由查找">数据分析 路由查找</h4>
-<ol>
-<li>
-<p>由上图可以看出，去往9.9.9.9的数据包 发往刚 R2 通过R7的G0/0/2口</p>
-</li>
-<li>
-<p>在R2上查找（图3 图4），发现去9.9.9.9 先打上一个内层标签（私网标签）1049 然后再打上公网 1025 如图五抓包</p>
-</li>
-</ol>
+<pre><code>1. 由上图一可以看出，去往9.9.9.9的数据包 发往刚 R2 通过R7的G0/0/2口
+</code></pre>
+<pre><code>2. 在R2上查找（图3 图4），发现去9.9.9.9 先打上一个内层标签（私网标签）1049 然后再打上公网 1025 如图五抓包  
+</code></pre>
 <table>
 <thead>
 <tr>
@@ -165,9 +222,8 @@ RD RT 如图所示</p>
 </thead>
 <tbody></tbody>
 </table>
-<ol start="3">
-<li>通过R2 g0/0/0 到达R1  如 图六  在图六中看到 R1 上没有vpn实例 端口没有绑定vpn 没有9.9.9.9 路由信息 只有公网路由（特指的是 1.1.1.1 到 6.6.6.6 loop0 ）信息 外层标签是mpls 分配 看标签是3 次末跳弹出 因此 在R1 出口 只有一层标签 1025 弹出</li>
-</ol>
+<pre><code>3. 通过R2 g0/0/0 到达R1  如 图六  在图六中看到 R1 上没有vpn实例 端口没有绑定vpn 没有9.9.9.9 路由信息 只有公网路由（特指的是 1.1.1.1 到 6.6.6.6 loop0 ）信息 外层标签是mpls 分配 看标签是3 次末跳弹出 因此 在R1 出口 只有一层标签 1025 弹出
+</code></pre>
 <table>
 <thead>
 <tr>
@@ -178,14 +234,10 @@ RD RT 如图所示</p>
 </thead>
 <tbody></tbody>
 </table>
-<ol start="4">
-<li>
-<p>到达R3 图八 显示到达9.9.9.9 路由 脱标签 变成ipv4 路由传递 out--&gt;null  图九显示数据包围为ip包</p>
-</li>
-<li>
-<p>到达R4 查找 9.9.9.9 路由 如图十所示 先私网标签1027 然后在打上公网标签1031 （6.6.6.6） 数据包 图十一</p>
-</li>
-</ol>
+<pre><code>4. 到达R3 图八 显示到达9.9.9.9 路由 脱标签 变成ipv4 路由传递 out--&gt;null  图九显示数据包围为ip包
+</code></pre>
+<pre><code>5. 到达R4 查找 9.9.9.9 路由 如图十所示 先私网标签1027 然后在打上公网标签1031 （6.6.6.6） 数据包 图十一
+</code></pre>
 <table>
 <thead>
 <tr>
@@ -197,9 +249,8 @@ RD RT 如图所示</p>
 </thead>
 <tbody></tbody>
 </table>
-<ol start="6">
-<li>到达R5 查找6.6.6.6 弹出标签 1031 弹出  图十四   数据包图十二</li>
-</ol>
+<pre><code>6. 到达R5 查找6.6.6.6 弹出标签 1031 弹出  图十四   数据包图十二
+</code></pre>
 <table>
 <thead>
 <tr>
@@ -210,97 +261,236 @@ RD RT 如图所示</p>
 </thead>
 <tbody></tbody>
 </table>
-<ol start="7">
-<li>到达R6 弹出私网标签 1027 图十五  数据包图十三</li>
-</ol>
+<pre><code> 7. 到达R6 弹出私网标签 1027 图十五  数据包图十三 
+</code></pre>
 
-              </div>
-              <div class="toc-container">
-                <ul class="markdownIt-TOC">
-<li><a href="#mpls">MPLS</a>
-<ul>
-<li><a href="#%E6%8B%93%E6%89%91">拓扑</a></li>
-<li><a href="#%E9%85%8D%E7%BD%AE">配置</a></li>
-<li><a href="#%E6%B5%8B%E8%AF%95">测试</a>
-<ul>
-<li><a href="#ping%E6%B5%8B%E8%AF%95">ping测试</a>
-<ul>
-<li><a href="#%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90-%E8%B7%AF%E7%94%B1%E6%9F%A5%E6%89%BE">数据分析 路由查找</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
+							</div>
+	<div class="wow bounceInDown vt-post-tags">
+ 
+					</div>						
+<nav class="navigation3 post-navigation3" role="navigation">
+		
+		<div class="nav-links3">
+      
+		 
+		<div class="wow bounceInRight nav-next3"><a href="https://loong-novice.github.io/post/mpls/" rel="next"> MPLS</a></div>
+		
+		</div>
+	</nav>
+	<div class="wow rollIn author-info" style="visibility: visible; animation-name: rollIn;">
+	<div class="author-avatar pull-left"><img src="https://loong-novice.github.io//images/avatar.png" ></div>
+ 
 
-              </div>
-            </div>
-          </article>
+		</div>
+		
+ 
+		
+</article>
+
+<div id="marlin_lite_about_widget-2" class="wow bounceInUp widget marlin_lite_about_widget" data-wow-delay="0.1s">
+		
+        
+		<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='https://loong-novice.github.io//media/scripts/Valine.min.js'></script>
+
+<div class="comment"></div>
+<script>
+        new Valine({
+            // AV 对象来自上面引入av-min.js(老司机们不要开车➳♡゛扎心了老铁)
+            av: AV, 
+            el: '.comment',
+            lang: 'zh-cn',
+            
+            
+      emoticon_list: ["吐.png","喷血.png","狂汗.png","不说话.png","汗.png","坐等.png","献花.png","不高兴.png","中刀.png","害羞.png","皱眉.png","小眼睛.png","中指.png","尴尬.png","瞅你.png","想一想.png","中枪.png","得意.png","肿包.png","扇耳光.png","亲亲.png","惊喜.png","脸红.png","无所谓.png","便便.png","愤怒.png","蜡烛.png","献黄瓜.png","内伤.png","投降.png","观察.png","看不见.png","击掌.png","抠鼻.png","邪恶.png","看热闹.png","口水.png","抽烟.png","锁眉.png","装大款.png","吐舌.png","无奈.png","长草.png","赞一个.png","呲牙.png","无语.png","阴暗.png","不出所料.png","咽气.png","期待.png","高兴.png","吐血倒地.png","哭泣.png","欢呼.png","黑线.png","喜极而泣.png","喷水.png","深思.png","鼓掌.png","暗地观察.png"],
+     	
+      	
+          
+        });
+    </script> 
+
+
+   
+  
+ 
+
+		</div>
+
+			</div>
+			
+
+
+<div class="tocc col l3 hide-on-med-and-down">
+	
+        <div class="toc-widget">
+			
+            <div class="toc-title"></div>
+			
+            <div id="toc-content">
+			
+			
+			</div>
         </div>
-
-        
-          <div class="next-post">
-            <div class="next">下一篇</div>
-            <a href="https://loong-novice.github.io/post/mpls/">
-              <h3 class="post-title">
-                MPLS
-              </h3>
-            </a>
-          </div>
-        
-
-        
-
-        <div class="site-footer">
-  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
-  <a class="rss" href="https://loong-novice.github.io//atom.xml" target="_blank">
-    <i class="ri-rss-line"></i> RSS
-  </a>
-</div>
-
-      </div>
     </div>
 
-    <script>
-      hljs.initHighlightingOnLoad()
 
-      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
-
-      // This should probably be throttled.
-      // Especially because it triggers during smooth scrolling.
-      // https://lodash.com/docs/4.17.10#throttle
-      // You could do like...
-      // window.addEventListener("scroll", () => {
-      //    _.throttle(doThatStuff, 100);
-      // });
-      // Only not doing it here to keep this Pen dependency-free.
-
-      window.addEventListener("scroll", event => {
-        let fromTop = window.scrollY;
-
-        mainNavLinks.forEach((link, index) => {
-          let section = document.getElementById(decodeURI(link.hash).substring(1));
-          let nextSection = null
-          if (mainNavLinks[index + 1]) {
-            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
-          }
-          if (section.offsetTop <= fromTop) {
-            if (nextSection) {
-              if (nextSection.offsetTop > fromTop) {
-                link.classList.add("current");
-              } else {
-                link.classList.remove("current");    
-              }
-            } else {
-              link.classList.add("current");
-            }
-          } else {
-            link.classList.remove("current");
-          }
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.5.0/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '.entry-summary',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            // headingsOffset: -205,
+            headingSelector: 'h2, h3, h4'
         });
-      });
 
-    </script>
-  </body>
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('.entry-summary').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+    });
+</script>										 
+
+ 
+       
+
+
+			</div>
+		</div>
+
+		
+		 	<footer id="colophon" class="site-footer">
+
+			<div class="container">
+	
+				<div class="copyright">Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a><br>Theme:   <a href="https://github.com/shanbufun/gridea-theme-pan" target="_blank" title="Pan"><span>Pan</span></a>.  by <a href="https://shanbu.fun/" target="_blank"  title="山卜方" >Shanbufun</a></div>		
+			</div>
+		
+		</footer>
+
+</div>
+
+<script src="https://cdn.bootcss.com/fitvids/1.2.0/jquery.fitvids.min.js"></script>
+<script type='text/javascript' src='https://loong-novice.github.io//media/scripts/marlin-scripts.js'></script>
+ <script src="//tokinx.github.io/lately/lately.min.js"></script>
+  <script>jQuery(document).ready(function(){$.lately({'target':'.lately-a,.lately-b,.lately-c'})});</script>
+  <style type="text/css">a.back_to_top {
+    text-decoration: none;
+    position: fixed;
+    bottom: 40px;
+    right: 30px;
+    background: #f0f0f0;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    line-height: 36px;
+    font-size: 18px;
+    text-align: center;
+    transition-duration: .5s;
+    transition-propety: background-color;
+    display: none;
+}
+
+a.back_to_top span {
+    color: #888;
+}
+
+a.back_to_top:hover {
+    cursor: pointer;
+    background: #dfdfdf;
+}
+
+a.back_to_top:hover span {
+    color: #555;
+}
+
+@media print, screen and (max-width: 580px) {
+    .back_to_top {
+        display: none !important;
+    }
+}
+
+
+
+</style><a id="back_to_top" href="#" class="back_to_top"><span><i class="iconfont icon-xiangshang"></i></span>
+</a>
+
+
+<script>$(document).ready((function(_this) {
+  return function() {
+    var bt;
+    bt = $('#back_to_top');
+    if ($(document).width() > 480) {
+      $(window).scroll(function() {
+        var st;
+        st = $(window).scrollTop();
+        if (st > 30) {
+          return bt.css('display', 'block');
+        } else {
+          return bt.css('display', 'none');
+        }
+      });
+      return bt.click(function() {
+        $('body,html').animate({
+          scrollTop: 0
+        }, 800);
+        return false;
+      });
+    }
+  };
+})(this));
+</script>
+
+		<script data-no-instant>
+    (function ($) {
+        $.extend({
+            adamsOverload: function () {
+                $('.navigation:eq(0)').remove();
+                $("").attr("rel" , "external");
+                $("a[rel='external'],a[rel='external nofollow']").attr("target","_blank");
+                $("a.vi").attr("rel" , "");
+                $.viewImage({
+                    'target'  : 'img',
+                    'exclude' : '.vsmile-icons img,.gallery img',
+                    'delay'   : 300
+                });
+                $.lately({
+                    'target' : '.commentmetadata a,.infos time,.post-list time'
+                });
+                prettyPrint();
+                
+                $('ul.links li a').each(function(){
+                    if($(this).parent().find('.bg').length==0){
+                        $(this).parent().append('<!---<div class="bg" style="background-image:url(https://c3.glgoo.top/s2/favicons?domain='+$(this).attr("href")+')"></div>--->')
+                    }
+                });
+            }
+        });
+    })(jQuery);
+    jQuery.adamsOverload();
+</script>
+
+</body>
 </html>
