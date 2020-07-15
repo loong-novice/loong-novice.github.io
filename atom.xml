@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://loong-novice.github.io/</id>
     <title>网络</title>
-    <updated>2020-07-15T18:42:46.034Z</updated>
+    <updated>2020-07-15T18:44:49.541Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://loong-novice.github.io/"/>
     <link rel="self" href="https://loong-novice.github.io/atom.xml"/>
@@ -18,7 +18,7 @@
         <updated>2020-07-14T17:43:51.000Z</updated>
         <content type="html"><![CDATA[<h3 id="mpls">MPLS</h3>
 <h4 id="拓扑">拓扑</h4>
-<figure data-type="image" tabindex="1"><img src="https://loong-novice.github.io//post-images/1594748672014.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="1"><img src="https://loong-novice.github.io//post-images/1594748672014.png" alt="拓扑" loading="lazy"></figure>
 <pre><code>拓扑说明：
 R1 R2 R3---- isis AS 10  BGP  AS 10
 R4 R5 R6---- isis AS 20  BGP  AS 20
@@ -29,7 +29,7 @@ RD RT 如图所示
 
 </code></pre>
 <h4 id="配置">配置</h4>
-<p><a href="file:///C:/Users/Administrator/Desktop/MPLS-A.rar">mpls-A配置 下载</a></p>
+<p><a href="https://github.com/loong-novice/MPLS-DOC/raw/master/MPLS-A.rar">mpls-A配置 下载</a></p>
 <h4 id="ping测试">ping测试</h4>
 <hr>
 <p>R7 loop0 7.7.7.7   访问  R9 loop0 9.9.9.9</p>
