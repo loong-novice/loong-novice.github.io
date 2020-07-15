@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://loong-novice.github.io/</id>
     <title>网络</title>
-    <updated>2020-07-15T11:19:45.137Z</updated>
+    <updated>2020-07-15T18:16:00.171Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://loong-novice.github.io/"/>
     <link rel="self" href="https://loong-novice.github.io/atom.xml"/>
@@ -29,8 +29,7 @@ RD RT 如图所示
 
 </code></pre>
 <h4 id="配置">配置</h4>
-<pre><code>
-</code></pre>
+<p><a href="https://github.com/loong-novice/loong-novice.github.io/raw/master/MPLS-A.rar">mpls-A配置 下载</a></p>
 <h4 id="ping测试">ping测试</h4>
 <hr>
 <p>R7 loop0 7.7.7.7   访问  R9 loop0 9.9.9.9</p>
